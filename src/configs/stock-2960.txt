@@ -1,4 +1,6 @@
-hostname 10.69.1.200
+autodetect = true
+
+hostname {ip}
 no aaa new-model
 system mtu routing 1500
 ip dhcp relay information trust-all
@@ -6,7 +8,7 @@ ip dhcp use subscriber-id client-id
 ip dhcp subscriber-id interface-name
 !
 ip dhcp pool data
-   import all
+import all
 ip access-list extended BLOCK_DHCP
 deny udp any any eq bootpc
 deny udp any any eq bootps
@@ -16,65 +18,65 @@ interface Fastethernet0/48
 ip access-group BLOCK_DHCP in
 !
 ip dhcp pool Port_Based
-network 10.69.0.0 255.255.0.0
-default-router 10.69.0.1
+network {ip[0]}.{ip[1]}.0.0 255.255.0.0
+default-router {ip[0].ip[1].0.1
 dns-server 8.8.8.8 4.2.2.2
 reserved-only
-address 10.69.1.1 client-id "Fa0/1" ascii
-address 10.69.1.2 client-id "Fa0/2" ascii
-address 10.69.1.3 client-id "Fa0/3" ascii
-address 10.69.1.4 client-id "Fa0/4" ascii
-address 10.69.1.5 client-id "Fa0/5" ascii
-address 10.69.1.6 client-id "Fa0/6" ascii
-address 10.69.1.7 client-id "Fa0/7" ascii
-address 10.69.1.8 client-id "Fa0/8" ascii
-address 10.69.1.9 client-id "Fa0/9" ascii
-address 10.69.1.10 client-id "Fa0/10" ascii
-address 10.69.1.11 client-id "Fa0/11" ascii
-address 10.69.1.12 client-id "Fa0/12" ascii
-address 10.69.1.13 client-id "Fa0/13" ascii
-address 10.69.1.14 client-id "Fa0/14" ascii
-address 10.69.1.15 client-id "Fa0/15" ascii
-address 10.69.1.16 client-id "Fa0/16" ascii
-address 10.69.1.17 client-id "Fa0/17" ascii
-address 10.69.1.18 client-id "Fa0/18" ascii
-address 10.69.1.19 client-id "Fa0/19" ascii
-address 10.69.1.20 client-id "Fa0/20" ascii
-address 10.69.1.21 client-id "Fa0/21" ascii
-address 10.69.1.22 client-id "Fa0/22" ascii
-address 10.69.1.23 client-id "Fa0/23" ascii
-address 10.69.1.24 client-id "Fa0/24" ascii
-address 10.69.1.25 client-id "Fa0/25" ascii
-address 10.69.1.26 client-id "Fa0/26" ascii
-address 10.69.1.27 client-id "Fa0/27" ascii
-address 10.69.1.28 client-id "Fa0/28" ascii
-address 10.69.1.29 client-id "Fa0/29" ascii
-address 10.69.1.30 client-id "Fa0/30" ascii
-address 10.69.1.31 client-id "Fa0/31" ascii
-address 10.69.1.32 client-id "Fa0/32" ascii
-address 10.69.1.33 client-id "Fa0/33" ascii
-address 10.69.1.34 client-id "Fa0/34" ascii
-address 10.69.1.35 client-id "Fa0/35" ascii
-address 10.69.1.36 client-id "Fa0/36" ascii
-address 10.69.1.37 client-id "Fa0/37" ascii
-address 10.69.1.38 client-id "Fa0/38" ascii
-address 10.69.1.39 client-id "Fa0/39" ascii
-address 10.69.1.40 client-id "Fa0/40" ascii
-address 10.69.1.41 client-id "Fa0/41" ascii
-address 10.69.1.42 client-id "Fa0/42" ascii
-address 10.69.1.43 client-id "Fa0/43" ascii
-address 10.69.1.44 client-id "Fa0/44" ascii
-address 10.69.1.45 client-id "Fa0/45" ascii
-address 10.69.1.46 client-id "Fa0/46" ascii
-address 10.69.1.47 client-id "Fa0/47" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.1 client-id "Fa0/1" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.2 client-id "Fa0/2" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.3 client-id "Fa0/3" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.4 client-id "Fa0/4" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.5 client-id "Fa0/5" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.6 client-id "Fa0/6" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.7 client-id "Fa0/7" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.8 client-id "Fa0/8" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.9 client-id "Fa0/9" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.10 client-id "Fa0/10" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.11 client-id "Fa0/11" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.12 client-id "Fa0/12" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.13 client-id "Fa0/13" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.14 client-id "Fa0/14" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.15 client-id "Fa0/15" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.16 client-id "Fa0/16" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.17 client-id "Fa0/17" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.18 client-id "Fa0/18" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.19 client-id "Fa0/19" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.20 client-id "Fa0/20" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.21 client-id "Fa0/21" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.22 client-id "Fa0/22" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.23 client-id "Fa0/23" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.24 client-id "Fa0/24" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.25 client-id "Fa0/25" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.26 client-id "Fa0/26" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.27 client-id "Fa0/27" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.28 client-id "Fa0/28" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.29 client-id "Fa0/29" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.30 client-id "Fa0/30" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.31 client-id "Fa0/31" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.32 client-id "Fa0/32" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.33 client-id "Fa0/33" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.34 client-id "Fa0/34" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.35 client-id "Fa0/35" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.36 client-id "Fa0/36" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.37 client-id "Fa0/37" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.38 client-id "Fa0/38" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.39 client-id "Fa0/39" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.40 client-id "Fa0/40" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.41 client-id "Fa0/41" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.42 client-id "Fa0/42" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.43 client-id "Fa0/43" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.44 client-id "Fa0/44" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.45 client-id "Fa0/45" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.46 client-id "Fa0/46" ascii
+address {ip[0]}.{ip[1]}.{ip[2]}.47 client-id "Fa0/47" ascii
 !
 no spanning-tree vlan 1
 !
 interface Vlan1
-ip address 10.69.1.200 255.255.0.0
+ip address {ip[0]}.{ip[1]}.{ip[2]}.200 255.255.0.0
 no shut 
 !
-ip default-gateway 10.69.0.1
+ip default-gateway {ip[0]}.{ip[1]}.0.1
 ip http server
 ip http secure-server
 !
